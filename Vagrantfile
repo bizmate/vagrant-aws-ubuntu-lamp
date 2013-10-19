@@ -14,4 +14,10 @@ Vagrant.configure("2") do |config|
     override.ssh.username = "ubuntu"
     override.ssh.private_key_path = ENV["AWS_SSH_PRIVATE_KEY_PATH"]
   end
+  
+  config.puppet_install.version = "*"
+  
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "puppet"
+  end
 end

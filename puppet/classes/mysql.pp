@@ -36,11 +36,11 @@ skip-external-locking = FALSE
   }
   
   exec { 'create bizmate user': 
-    unless  => '/usr/bin/mysql -ubizmate -pputenz bizmate_db',
+    unless  => '/usr/bin/mysql -ubizmate -pputenz bizmate',
     command => '/usr/bin/mysql -uroot -e "\
       create user \'bizmate\'@\'localhost\' identified by \'putenz\';\
       create user \'bizmate\'@\'%\' identified by \'putenz\';\
-      grant all privileges on bizmate.* to \'bizmate\'@\'localhost\' identified by \'oe_test\';\
+      grant all privileges on bizmate.* to \'bizmate\'@\'localhost\' identified by \'putenz\';\
       grant all privileges on bizmate.* to \'bizmate\'@\'%\' identified by \'putenz\';\
       flush privileges;"',
     require => Exec['create bizmate db']

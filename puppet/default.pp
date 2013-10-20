@@ -11,6 +11,7 @@ class amp {
   #include copperegg
   include xdebug
   include curl
+  include sitesetup
 }
 
 include amp

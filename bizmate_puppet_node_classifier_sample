@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "parameters:
+    ntp_servers:
+        - 0.pool.ntp.org
+        - ntp.example.com
+    mail_server: mail.example.com
+    iburst: true
+    gebbione: 'putenz'"

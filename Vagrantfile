@@ -19,5 +19,6 @@ Vagrant.configure("2") do |config|
   
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet"
+    puppet.options = "--node_terminus exec --external_nodes /vagrant/bizmate_puppet_node_classifier"
   end
 end

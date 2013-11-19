@@ -3,6 +3,5 @@ echo "parameters:
     ntp_servers:
         - 0.pool.ntp.org
         - ntp.example.com
-    mail_server: mail.example.com
-    iburst: true
-    gebbione: 'putenz'"
+    global_copperegg_api_key: XXXXXXXXXXX
+    global_git_repo_url : ssh://user@server/gitRepo/"

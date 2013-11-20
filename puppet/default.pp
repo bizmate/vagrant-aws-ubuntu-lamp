@@ -5,6 +5,7 @@ class amp {
     command => '/usr/bin/apt-get update',
   }
 
+  include java
   include apache2
   include mysql
   include php5

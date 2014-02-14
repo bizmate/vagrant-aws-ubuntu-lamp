@@ -9,7 +9,7 @@ class amp {
   include apache2
   include mysql
   include php5
-  include copperegg
+  #include copperegg
   include xdebug
   include curl
   include sitesetup

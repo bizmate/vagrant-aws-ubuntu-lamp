@@ -17,10 +17,10 @@ Vagrant.configure("2") do |config|
   
   config.puppet_install.version = "*"
   
-  config.vm.provision :shell do |shell|
-  shell.inline = "mkdir -p /etc/puppet/modules;
-  	puppet module install mkrakowitzer/jira"
-  end
+  #config.vm.provision :shell do |shell|
+  #shell.inline = "mkdir -p /etc/puppet/modules;
+  #	puppet module install mkrakowitzer/jira"
+  #end
   
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet"

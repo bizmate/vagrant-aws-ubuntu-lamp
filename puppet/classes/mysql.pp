@@ -45,4 +45,21 @@ skip-external-locking = FALSE
       flush privileges;"',
     require => Exec['create bizmate db']
   }
+  
+  exec { 'create jira db':
+    unless  => '/usr/bin/mysql -uroot jira_bizmate',
+    command => '/usr/bin/mysql -uroot -e "create database jira_bizmate;"',
+    require => Service['mysql'],
+  }
+  
+  exec { 'create jira user': 
+    unless  => '/usr/bin/mysql -ujirabizmate -pputenz jira_bizmate',
+    command => '/usr/bin/mysql -uroot -e "\
+      create user \'jirabizmate\'@\'localhost\' identified by \'putenz\';\
+      create user \'jirabizmate\'@\'%\' identified by \'putenz\';\
+      grant all privileges on jira_bizmate.* to \'jirabizmate\'@\'localhost\' identified by \'putenz\';\
+      grant all privileges on jira_bizmate.* to \'jirabizmate\'@\'%\' identified by \'putenz\';\
+      flush privileges;"',
+    require => Exec['create jira db']
+  }
 }
